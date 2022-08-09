@@ -1,0 +1,122 @@
+#card__side {
+    background-image: url('../images/bg-main-desktop.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    max-width: 450px;
+    width: 100%;
+    margin-right: 10rem;
+    color: var(--clr-white);
+
+    .cards__attr {
+        max-width: 350px;
+        // min-width: 350px;
+        position: absolute;
+        box-shadow: 5px 5px 5px 5px rgba(96, 5, 148, 0.3);
+        border-radius: 10px;
+    }
+
+    .cards__img--attr {
+        position: relative;
+    }
+
+    .card__info {
+        position: absolute;
+    }
+
+    #card__front {
+        right: -6rem;
+        top: 8rem;
+        
+
+        #card__logo {
+            top: 1rem;
+            left: 1.5rem;
+            width: 70px;
+        }
+
+        #card__number {
+            top: 5rem;
+            left: 1.5rem;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+        }
+
+        #card__bottom {
+            bottom: 20px;
+            left: 1.5rem;
+            padding-right: 3rem;
+
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+    }
+
+    #card__back {
+        right: -10rem;
+        top: 20rem;
+
+        #card__cvc {
+            position: absolute;
+            top: 4.6rem;
+            right: 2.5rem;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+@media only screen and (max-width: 830px) {
+    #card__front {
+        right: -10rem !important;
+    }
+
+    #card__back {
+        right: -10rem;
+        top: 17rem;
+    }
+}
+
+@media only screen and (max-width: 766px) {
+    #card__side {
+        background-image: url('../images/bg-main-mobile.png');
+        height: 300px;
+        max-width: none;
+        width: 100%;
+        margin-right: 0;
+        padding: 1rem !important;
+    }
+
+    .cards__attr {
+        max-width: 320px !important;
+    }
+
+    #card__front {
+        right: 50%;
+        left: 47%;
+        transform: translate(-50%, 25%);
+        z-index: 99999;
+
+        #card__number {
+            font-size: 1.2rem !important;
+        }
+    }
+
+    #card__back {
+        right: 50%;
+        left: 50%;
+        transform: translate(-50%, -160%);
+
+        #card__cvc {
+            top: 4.1rem !important;
+            right: 2.5rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .cards__attr {
+        max-width: 309px !important;
+    }
+}

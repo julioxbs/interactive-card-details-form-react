@@ -1,0 +1,82 @@
+#form__content {
+    padding: 2rem;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        input[type="text"],
+        input[type="month"],
+        input[type="number"] {
+            width: 100%;
+            padding: .5rem .8rem;
+            border-radius: 10px;
+            border: 1px solid var(--clr-light-grayish-violet);
+            outline: none;
+
+            &:focus {
+                border: 1px solid var(--clr-very-dark-violet);
+            }
+
+            &::placeholder {
+                color: var(--clr-light-grayish-violet);
+            }
+        }
+
+        input[type="number"] {
+            min-width: 10rem;
+        }
+
+        input[type="month"] {
+            max-width: 10rem;
+        }
+
+        .title__form {
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            color: var(--clr-very-dark-violet);
+        }
+
+        #wrap__titles {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        #wrap__dates {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #wrap__expDates {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 766px) {
+    #form__content {
+        padding: 2rem 1rem;
+    }
+
+    form {
+        margin-top: 4.5rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #wrap__expDates {
+        flex-wrap: wrap !important;
+    }
+}

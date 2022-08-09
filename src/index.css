@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+:root {
+  /* Primary */
+  /* (active input border) */
+  --clr-linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+  /* (input errors) */
+  --clr-red: hsl(0, 100%, 66%);
+  /* Neutral */
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-light-grayish-violet: hsl(270, 3%, 87%);
+  --clr-dark-grayish-violet: hsl(279, 6%, 55%);
+  --clr-very-dark-violet: hsl(278, 68%, 11%);
+  --ff-space: "Space Grotesk", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--ff-space);
+  font-size: 18px;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+main {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+}
+
+@media only screen and (max-width: 766px) {
+  main {
+    flex-direction: column;
+  }
+}
+#card__side {
+  background-image: url("../images/bg-main-desktop.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  max-width: 450px;
+  width: 100%;
+  margin-right: 10rem;
+  color: var(--clr-white);
+}
+#card__side .cards__attr {
+  max-width: 350px;
+  position: absolute;
+  box-shadow: 5px 5px 5px 5px rgba(96, 5, 148, 0.3);
+  border-radius: 10px;
+}
+#card__side .cards__img--attr {
+  position: relative;
+}
+#card__side .card__info {
+  position: absolute;
+}
+#card__side #card__front {
+  right: -6rem;
+  top: 8rem;
+}
+#card__side #card__front #card__logo {
+  top: 1rem;
+  left: 1.5rem;
+  width: 70px;
+}
+#card__side #card__front #card__number {
+  top: 5rem;
+  left: 1.5rem;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+#card__side #card__front #card__bottom {
+  bottom: 20px;
+  left: 1.5rem;
+  padding-right: 3rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+#card__side #card__back {
+  right: -10rem;
+  top: 20rem;
+}
+#card__side #card__back #card__cvc {
+  position: absolute;
+  top: 4.6rem;
+  right: 2.5rem;
+  letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 830px) {
+  #card__front {
+    right: -10rem !important;
+  }
+  #card__back {
+    right: -10rem;
+    top: 17rem;
+  }
+}
+@media only screen and (max-width: 766px) {
+  #card__side {
+    background-image: url("../images/bg-main-mobile.png");
+    height: 300px;
+    max-width: none;
+    width: 100%;
+    margin-right: 0;
+    padding: 1rem !important;
+  }
+  .cards__attr {
+    max-width: 320px !important;
+  }
+  #card__front {
+    right: 50%;
+    left: 47%;
+    transform: translate(-50%, 25%);
+    z-index: 99999;
+  }
+  #card__front #card__number {
+    font-size: 1.2rem !important;
+  }
+  #card__back {
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%, -160%);
+  }
+  #card__back #card__cvc {
+    top: 4.1rem !important;
+    right: 2.5rem;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .cards__attr {
+    max-width: 309px !important;
+  }
+}
+#form__content {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+#form__content form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#form__content form input[type=text],
+#form__content form input[type=month],
+#form__content form input[type=number] {
+  width: 100%;
+  padding: 0.5rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid var(--clr-light-grayish-violet);
+  outline: none;
+}
+#form__content form input[type=text]:focus,
+#form__content form input[type=month]:focus,
+#form__content form input[type=number]:focus {
+  border: 1px solid var(--clr-very-dark-violet);
+}
+#form__content form input[type=text]::placeholder,
+#form__content form input[type=month]::placeholder,
+#form__content form input[type=number]::placeholder {
+  color: var(--clr-light-grayish-violet);
+}
+#form__content form input[type=number] {
+  min-width: 10rem;
+}
+#form__content form input[type=month] {
+  max-width: 10rem;
+}
+#form__content form .title__form {
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+  color: var(--clr-very-dark-violet);
+}
+#form__content form #wrap__titles {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+#form__content form #wrap__dates {
+  display: flex;
+  flex-direction: column;
+}
+#form__content form #wrap__expDates {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media only screen and (max-width: 766px) {
+  #form__content {
+    padding: 2rem 1rem;
+  }
+  form {
+    margin-top: 4.5rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #wrap__expDates {
+    flex-wrap: wrap !important;
+  }
+}
+#complete__message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+#complete__message img {
+  width: 5rem;
+}
+#complete__message h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--clr-very-dark-violet);
+}
+#complete__message p {
+  color: var(--clr-dark-grayish-violet);
+}
+
+@media only screen and (max-width: 1024px) {
+  #complete__message {
+    padding: 0 4rem;
+  }
+}
+@media only screen and (max-width: 766px) {
+  #complete__message {
+    padding: 0 1rem;
+    margin: 5rem auto;
+  }
+}
+.borderError {
+  border: 1px solid var(--clr-red) !important;
+}
+
+.errorMessage {
+  color: var(--clr-red) !important;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+}
+
+button {
+  color: var(--clr-white);
+  width: 100%;
+  background-color: var(--clr-very-dark-violet);
+  border: none;
+  padding: 0.7rem 2rem;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 2rem;
+  transition: all 0.3s;
+}
+button:hover {
+  background-color: hsl(278deg, 94%, 30%);
+}
+
+/*# sourceMappingURL=index.css.map */
